@@ -39,7 +39,7 @@ public class FlamesCalculator {
         JButton calculateButton = new JButton("Calculate");
         calculateButton.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        JTextArea resultArea = new JTextArea(5, 30);
+        JTextArea resultArea = new JTextArea(5, 28);
         resultArea.setEditable(false);
         
         // Set font size and style for JTextArea
