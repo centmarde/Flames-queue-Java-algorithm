@@ -1,10 +1,15 @@
+import javax.swing.*;
+import java.awt.*;
+
 public class UI {
-    public static String getResultUI(String result) {
+    public static JLabel getResultUI(String result) {
         switch (result) {
             case "Lovers":
-            case "Marriage":
-            case "Engagement":
                 return getHeartUI();
+            case "Marriage":
+                return getMarriageUI();
+            case "Engagement":
+                return getEngagementUI();
             case "Friends":
                 return getThumbsUpUI();
             case "Anger":
@@ -12,26 +17,43 @@ public class UI {
             case "Soulmates":
                 return getBirdUI();
             default:
-                return "";
+                return new JLabel("");
         }
     }
-    
-    public static String getHeartUI() {
-        return "❤️" ;
+    public static JLabel getEngagementUI() {
+        return getImageLabel("assets/engagement.png");
+    }
+
+    public static JLabel getHeartUI() {
+        return getImageLabel("assets/heart.png");
+    }
+
+    public static JLabel getMarriageUI() {
+        return getImageLabel("assets/married.png");
     }
     
-    public static String getThumbsUpUI() {
-        return "👍";
-              
+    public static JLabel getThumbsUpUI() {
+        return getImageLabel("assets/thumbs_up.png");
     }
     
-    public static String getAngerUI() {
-        return "😠";
+    public static JLabel getAngerUI() {
+        return getImageLabel("assets/angry_face.png");
     }
     
-    public static String getBirdUI() {
-        return "🕊️";
-               
+    public static JLabel getBirdUI() {
+        return getImageLabel("assets/soulmates.png");
     }
-    
+
+    private static JLabel getImageLabel(String path) {
+      
+        ImageIcon imageIcon = new ImageIcon(path);
+
+        Image image = imageIcon.getImage();
+
+        Image scaledImage = image.getScaledInstance(100 , 100, Image.SCALE_SMOOTH);
+
+        ImageIcon scaledIcon = new ImageIcon(scaledImage);
+
+        return new JLabel(scaledIcon);
+    }
 }
