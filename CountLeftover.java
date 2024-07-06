@@ -2,7 +2,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class CountLeftover {
-    private RemoveCommonChars remover = new RemoveCommonChars(); 
+     RemoveCommonChars remover = new RemoveCommonChars(); 
 
     
     public int getCountLeftover(String name1, String name2) {
@@ -18,7 +18,7 @@ public class CountLeftover {
         }
 
        
-        remover.removeCommonChars(q1, q2);
+        RemoveCommonChars.removeCommonChars(q1, q2);
 
        
         int leftoverCount = q1.size() + q2.size();
